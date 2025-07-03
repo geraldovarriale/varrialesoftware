@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varriale Software - Soluções Inovadoras e Eficientes Para o Seu Negócio</title>
+    <!-- favicon -->
+    <link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo/favicon.ico" type="image/x-icon">    
+    <!-- Inclui o CDN do Tailwind CSS para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN para o ícone do WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Configura o Tailwind CSS para usar a fonte Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilos para a animação de rolagem dos logotipos */
+        .logo-carousel {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%; /* Garante que o carrossel ocupe a largura total */
+        }
+        .logo-carousel-inner {
+            display: flex; /* Usa flexbox para os itens do carrossel */
+            animation: scroll-logos 30s linear infinite; /* Ajuste a duração conforme necessário */
+            /* Duplica o conteúdo para uma rolagem contínua sem interrupções */
+            width: fit-content; /* Permite que o conteúdo se estenda */
+        }
+        .logo-carousel-inner img {
+            height: 60px; /* Altura dos logotipos */
+            margin: 0 2rem; /* Espaçamento entre os logotipos */
+            filter: grayscale(100%); /* Logotipos em tons de cinza */
+            opacity: 0.6; /* Opacidade reduzida */
+            transition: all 0.3s ease;
+            flex-shrink: 0; /* Impede que as imagens encolham */
+        }
+        .logo-carousel-inner img:hover {
+            filter: grayscale(0%); /* Cor ao passar o mouse */
+            opacity: 1; /* Opacidade total ao passar o mouse */
+        }
+
+        @keyframes scroll-logos {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); } /* Rola até a metade para a repetição perfeita */
+        }
+
+        /* Adiciona um gradiente de desvanecimento nas laterais do carrossel */
+        .logo-carousel::before,
+        .logo-carousel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px; /* Largura do desvanecimento */
+            height: 100%;
+            z-index: 10;
+        }
+
+        .logo-carousel::before {
+            left: 0;
+            background: linear-gradient(to right, #f9fafb, rgba(255, 255, 255, 0));
+        }
+
+        .logo-carousel::after {
+            right: 0;
+            background: linear-gradient(to left, #f9fafb, rgba(255, 255, 255, 0));
+        }
+
+        /* Ajuste para telas menores para garantir que o carrossel funcione bem */
+        @media (max-width: 768px) {
+            .logo-carousel-inner img {
+                height: 45px; /* Reduz o tamanho dos logotipos em telas menores */
+                margin: 0 1.5rem;
+            }
+            .logo-carousel::before,
+            .logo-carousel::after {
+                width: 50px; /* Reduz a largura do desvanecimento */
+            }
+        }
+
+        /* Estilo personalizado para o efeito de escala de cinza e transição do botão do WhatsApp */
+        .whatsapp-icon {
+            filter: grayscale(100%) opacity(70%); /* Ícone opaco e em escala de cinza */
+            transition: filter 0.3s ease-in-out; /* Transição suave */
+        }
+        .whatsapp-icon:hover {
+            filter: grayscale(0%) opacity(100%); /* Cor natural e opacidade total ao passar o mouse */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Seção do Cabeçalho/Hero -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-16 md:py-24 lg:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Logotipo -->
+            <img src="assets/logo/logo.png" alt="Descrição da imagem" class="mx-auto block" style="width: 150px;">
+            <!-- Título principal - Varriale Software -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                Varriale Software
+            </h1>
+            <!-- Subtítulo descrevendo a missão da empresa -->
+            <p class="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto">
+                Soluções Inovadoras e Eficientes para o Seu Negócio
+            </p>
+            <!-- Descrição breve da empresa -->
+            <p class="text-md md:text-lg max-w-4xl mx-auto mb-10">
+                Bem-vindo à Varriale Software, onde transformamos a complexidade em soluções computacionais intuitivas e eficientes. Somos apaixonados por tecnologia e negócios, com dedicação a desenvolver ferramentas que impulsionam o sucesso dos nossos clientes. Seja você atuante no setor de comércio e serviços, na gestão de uma microempresa, uma empresa consolidada ou uma startup em crescimento, temos a expertise para implementar o que você precisa.
+            </p>
+            <!-- Botões de Ação -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#servicos" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Nossos Serviços
+                </a>
+                <a href="#contato" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Fale Conosco
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Nossos Serviços -->
+    <section id="servicos" class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Nossos Serviços</h2>
+            <p class="text-lg text-center mb-12 max-w-3xl mx-auto text-gray-600">
+                Oferecemos um portfólio completo de soluções computacionais, adaptadas às suas necessidades específicas:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Cartão de Serviço: Consultoria de Software -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <!-- Ícone de lâmpada/ideia (Lucide React icon equivalent for lightbulb) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb mx-auto"><path d="M15 14c.2-1 .7-2 1.5-3 .9-1.2 1.5-2.7 1.5-4 0-3.3-2.7-6-6-6S6 3.7 6 7c0 1.3.6 2.8 1.5 4 .8 1 1.3 2 1.5 3"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-gray-900">Consultoria de Software</h3>
+                    <p class="text-gray-600 text-center">
+                        Criamos soluções sob medida para resolver os desafios únicos do seu negócio, garantindo que o software se alinhe perfeitamente aos seus processos e objetivos.
+                    </p>
+                </div>
+                <!-- Cartão de Serviço: Desenvolvimento e Integração de Sistemas -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <!-- Ícone de código (Lucide React icon equivalent for code) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="nsolone" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code mx-auto"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-gray-900">Desenvolvimento e Integração de Sistemas</h3>
+                    <p class="text-gray-600 text-center">
+                        Do design responsivo à funcionalidade robusta, construímos aplicações web dinâmicas e seguras que oferecem uma experiência de usuário excepcional em qualquer dispositivo.
+                    </p>
+                </div>
+                <!-- Cartão de Serviço: Implantação de Plataformas Computacionais -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <!-- Ícone de navegador web (Lucide React icon equivalent for laptop) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop mx-auto"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-gray-900">Implantação de Plataformas Computacionais</h3>
+                    <p class="text-gray-600 text-center">
+                        Esteja presente no bolso dos seus clientes. Desenvolvemos aplicativos nativos e híbridos para iOS e Android, focando em desempenho e usabilidade.
+                    </p>
+                </div>
+                <!-- Cartão de Serviço: Suporte e Melhoria Contínua -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-4xl mb-4 text-center">
+                        <!-- Ícone de melhoria contínua (Lucide React icon equivalent for line-chart) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-line-chart mx-auto"><path d="M3 3v18h18"/><path d="m18 6-6 6-4-4-3 3"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center text-gray-900">Suporte & Melhoria Contínua</h3>
+                    <p class="text-gray-600 text-center">
+                        Nossos especialistas estão prontos para guiá-lo pelas melhores práticas e tendências tecnológicas, ajudando você a tomar decisões estratégicas para o futuro digital da sua empresa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Por Que Nos Escolher? -->
+    <section class="py-16 md:py-20 lg:py-24 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Por Que Nos Escolher?</h2>
+            <p class="text-lg text-center mb-12 max-w-3xl mx-auto text-gray-600">
+                Na Varriale Software, acreditamos que a parceria é a chave para o sucesso.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Cartão de Vantagem: Experiência e Expertise -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <!-- Ícone de estrela (Lucide React icon equivalent for star) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Experiência e Expertise</h3>
+                    <p class="text-gray-600">Nossa equipe é composta por profissionais qualificados em tecnologia e negócios e com vasta experiência no mercado.</p>
+                </div>
+                <!-- Cartão de Vantagem: Foco no Cliente -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <!-- Ícone de usuário (Lucide React icon equivalent for user) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Foco no Cliente</h3>
+                    <p class="text-gray-600">Entendemos suas necessidades antes de propor melhorias, garantindo que a solução final supere suas expectativas e entregue valor real.</p>
+                </div>
+                <!-- Cartão de Vantagem: Qualidade e Confiabilidade -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <!-- Ícone de check (Lucide React icon equivalent for check-circle) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Qualidade e Confiabilidade</h3>
+                    <p class="text-gray-600">Comprometemo-nos com os mais altos padrões de qualidade, entregando sistemas robustos, seguros e com desempenhos otimizados.</p>
+                </div>
+                <!-- Cartão de Vantagem: Inovação Constante -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <!-- Ícone de foguete (Lucide React icon equivalent for rocket) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.75-1.061 1.5-2 1.5-2L11 9l-1.5-1.5L2.5 14.5c-1.5 1.5-2 2-2 2z"/><path d="M10 11l7.5-7.5L22 10l-7.5 7.5L10 11z"/><path d="M11 10l3-3l3 3l-3 3z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Inovação Constante</h3>
+                    <p class="text-gray-600">Estamos sempre atualizados com as últimas tecnologias e metodologias, incorporando as inovações mais relevantes em nossos projetos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Parceiros (Carrossel de Logotipos) -->
+    <section class="py-16 md:py-20 lg:py-24 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Soluções Parceiras</h2>
+            <div class="logo-carousel relative py-4">
+                <div class="logo-carousel-inner">
+                    <!-- Duplique os logotipos para um efeito de rolagem contínua -->
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_02.png" alt="ClippService">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_01.png" alt="Clipp360">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_03.png" alt="ClippCheff">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_04.png" alt="ClippFácil">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_05.png" alt="ClippPro">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_06.png" alt="ClippMei">
+                    <img src="assets/img/Zuc_Orizz_A 1000px.png" alt="Zucchetti">
+                    <img src="assets/img/Zweb_Horizontal.png" alt="Zweb">
+
+                    <!-- Repetição dos logotipos para rolagem infinita -->
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_02.png" alt="ClippService">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_01.png" alt="Clipp360">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_03.png" alt="ClippCheff">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_04.png" alt="ClippFácil">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_05.png" alt="ClippPro">
+                    <img src="assets/img/01_FT_01_zuchetti_clipp_06.png" alt="ClippMei">
+                    <img src="assets/img/Zuc_Orizz_A 1000px.png" alt="Zucchetti">
+                    <img src="assets/img/Zweb_Horizontal.png" alt="Zweb">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Fale Conosco -->
+    <section id="contato" class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">Fale Conosco</h2>
+            <p class="text-lg mb-8 max-w-3xl mx-auto text-gray-600">
+                Estamos prontos para ouvir suas ideias, entender suas necessidades, propor soluções e transformá-las em realidade. Entre em contato conosco hoje mesmo para uma consultoria gratuita.
+            </p>
+            <div class="flex flex-col items-center space-y-4 text-lg text-gray-700">
+                <p class="flex items-center">
+                    <!-- Ícone de telefone (Lucide React icon equivalent for phone) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-3 text-blue-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.67-3.67A19.79 19.79 0 0 1 2 6.18V4a2 2 0 0 1 2-2h3.62a2 2 0 0 1 1.92 1.49l.77 4.47a2 2 0 0 1-1.16 2.17l-1.16.66a2.13 2.13 0 0 0-.7 2.91 19.79 19.79 0 0 0 3.67 3.67A2.13 2.13 0 0 0 15.65 18l.66-1.16a2 2 0 0 1 2.17-1.16l4.47.77A2 2 0 0 1 22 16.92z"/></svg>
+                    <strong class="font-semibold">Telefone:</strong> (41) 99516-0257
+                </p>
+                <p class="flex items-center">
+                    <!-- Ícone de e-mail (Lucide React icon equivalent for mail) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-3 text-blue-600"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <strong class="font-semibold">E-mail:</strong> contato@varriale.com.br
+                </p>
+            <!--
+                <p class="flex items-center">
+                    /* Ícone de localização (Lucide React icon equivalent for map-pin) */
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mr-3 text-blue-600"><path d="M12 18.35a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/><path d="M12 22c-4.42 0-8-3.58-8-8a8 8 0 0 1 16 0c0 4.42-3.58 8-8 8z"/></svg>
+                    <strong class="font-semibold">Endereço:</strong> Rua Victor Kotovis, 450 - Curitiba/PR
+                </p>
+            -->
+                <p class="flex items-center">
+                    <!-- Ícone do WhatsApp -->
+                    <div class="p-8 bg-white rounded-xl shadow-lg text-center">
+                        <a 
+                          href="https://wa.me/5541995160257" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          class="inline-block text-green-500 hover:text-green-600 transform hover:scale-105 transition-transform duration-300"
+                        >
+                          <!-- Ícone do WhatsApp da Font Awesome -->
+                          <i class="fab fa-whatsapp text-6xl whatsapp-icon"></i>
+                        </a>
+                        <p class="mt-4 text-gray-600">Clique no ícone para iniciar uma conversa.</p>
+                        <p class="text-sm text-gray-500 mt-2">
+                        </p>
+                    </div>
+                </p>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do Rodapé -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">
+                © 2025 Varriale Software — G. S. S. Varriale Ltda — CNPJ 40.909.149/0001-02. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
